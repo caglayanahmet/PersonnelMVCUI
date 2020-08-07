@@ -1,0 +1,54 @@
+﻿@model PersonnelMVCUI.ViewModels.PersonnelFormViewModel
+@{
+    ViewBag.Title = "PersonnelForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personnel Form</h2>
+
+@Html.ValidationSummary()
+@using (Html.BeginForm("Save", "Personnel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Personnel.FirstName)
+        @Html.TextBoxFor(m => m.Personnel.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Personnel.FirstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Personnel.LastName)
+        @Html.TextBoxFor(m => m.Personnel.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Personnel.LastName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Personnel.DepartmentId)
+        @Html.DropDownListFor(m => m.Personnel.DepartmentId, new SelectList(Model.Departments, "Id", "Name"), "Select a Department", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Personnel.DepartmentId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Personnel.Salary)
+        @Html.TextBoxFor(m => m.Personnel.Salary, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Personnel.Salary)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Personnel.DateOfBirth)
+        @Html.TextBoxFor(m => m.Personnel.DateOfBirth, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(m => m.Personnel.DateOfBirth)
+    </div>
+    <div class="custom-radio">
+        <label>
+            @Html.RadioButtonFor(m => m.Personnel.Gender, true) Male
+
+        </label>
+        <label>
+            @Html.RadioButtonFor(m => m.Personnel.Gender, false) Female
+        </label>
+        @Html.ValidationMessageFor(m => m.Personnel.Gender)
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m=>m.Personnel.Married) Is Married 
+        </label>
+    </div>
+    @Html.HiddenFor(m=>m.Personnel.Id)
+    <button class="btn btn-primary" type="submit">Save</button>
+}

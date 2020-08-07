@@ -1,0 +1,17 @@
+﻿@model PersonnelMVCUI.Models.EntityFramework.Department
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Save", "Department", FormMethod.Post))
+{
+    <div class="form-group" style="margin-top:15px">
+        @Html.LabelFor(m=>m.Name)
+        @Html.TextBoxFor(m=>m.Name, new {@class="form-control" })
+        @Html.ValidationMessageFor(m=>m.Name)
+    </div>
+    @Html.HiddenFor(m=>m.Id)
+    <button type="submit" class="btn btn-success">Save</button>
+}
+

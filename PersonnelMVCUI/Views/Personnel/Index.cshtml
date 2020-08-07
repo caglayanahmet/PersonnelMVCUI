@@ -1,0 +1,46 @@
+﻿@using PersonnelMVCUI.Models.EntityFramework
+@model  List<Personnel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <br />
+@Html.ActionLink("Add a Person","Add",null,new {@class="btn btn-success" })
+<h2>Personnel List</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Department</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Salary</th>
+            <th>Age</th>
+            <th>DateOfbirth</th>
+            <th>Gender</th>
+            <th>Married</th>    
+            <th>Update</th>    
+            <th>Delete</th>    
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personnel in Model)
+        {
+            <tr>
+                <td>@personnel.Id</td>
+                <td>@personnel.Department.Name</td>
+                <td>@personnel.FirstName</td>
+                <td>@personnel.LastName</td>
+                <td>@personnel.Salary</td>
+                <td>@(DateTime.Now.Year - personnel.DateOfBirth.Value.Year)</td>
+                <td>@personnel.DateOfBirth.Value.ToString("dd-MM-yyyy")</td>
+                <td>@(personnel.Gender==true?"Male":"Female")</td>
+                <td>@(personnel.Married==true?"Married":"Not Married")</td>
+                <td>@Html.ActionLink("Update","Update",new {id=personnel.Id },new {@class="btn btn-success" })</td>
+                <td>@Html.ActionLink("Delete","Delete",new {id=personnel.Id },new {@class="btn btn-danger" })</td>
+            </tr>
+        }
+    </tbody>
+    
+</table>
+

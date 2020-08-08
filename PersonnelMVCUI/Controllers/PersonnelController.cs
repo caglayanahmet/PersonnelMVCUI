@@ -31,22 +31,22 @@ namespace PersonnelMVCUI.Controllers
             return View("PersonnelForm", model);
         }
 
-
-        public ActionResult Save(Personnel per)
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(PersonnelFormViewModel per)
         {
             if (!ModelState.IsValid)
             {
-                var model = new PersonnelFormViewModel()
-                {
-                    Departments = db.Department.ToList(),
-                    Personnel = per
-                };
-                return View("PersonnelForm",model);
+                //var model = new PersonnelFormViewModel()
+                //{
+                //    Departments = db.Department.ToList(),
+                //    Personnel = per
+                //};
+                return View("PersonnelForm",per);
             }
 
-            if (per.Id == 0) //Addition operation 
+            if (per.Personnel.Id == 0) //Addition operation 
             {
-                db.Personnel.Add(per);
+                db.Personnel.Add(per.Personnel);
             }
             else //update operation 
             {

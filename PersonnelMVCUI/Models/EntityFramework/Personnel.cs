@@ -11,32 +11,16 @@ namespace PersonnelMVCUI.Models.EntityFramework
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Personnel
     {
         public int Id { get; set; }
-
-        [Display(Name ="Department Name")]
-        [Required]
         public Nullable<int> DepartmentId { get; set; }
-
-        [Required]
         public string FirstName { get; set; }
-        
-        [Required]
         public string LastName { get; set; }
-        [Range(1200,10000,ErrorMessage ="Salary must be between 1200 and 10000.")]
         public Nullable<short> Salary { get; set; }
-
-        [Display(Name ="Date of Birth")]
-        [Required]
         public Nullable<System.DateTime> DateOfBirth { get; set; }
-
-        [Required]
         public bool Gender { get; set; }
-
-        [Display(Name ="Maritial Status")]
         public bool Married { get; set; }
     
         public virtual Department Department { get; set; }

@@ -20,6 +20,15 @@
     <Property Name="Gender" Type="bit" Nullable="false" />
     <Property Name="Married" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="2" Nullable="false" />
+  </EntityType>
   <Association Name="FK_Personnel_Department">
     <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
     <End Role="Personnel" Type="Self.Personnel" Multiplicity="*" />
@@ -35,6 +44,7 @@
   <EntityContainer Name="DbPersonnelModelStoreContainer">
     <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Personnel" EntityType="Self.Personnel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Personnel_Department" Association="Self.FK_Personnel_Department">
       <End Role="Department" EntitySet="Department" />
       <End Role="Personnel" EntitySet="Personnel" />

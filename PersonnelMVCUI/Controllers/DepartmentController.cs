@@ -24,7 +24,7 @@ namespace PersonnelMVCUI.Controllers
             return View("DepartmentForm",new Department());
         }
 
-        [HttpPost]
+       [ValidateAntiForgeryToken]
         public ActionResult Save(Department dep)
         {
             if (!ModelState.IsValid)

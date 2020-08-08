@@ -15,6 +15,7 @@
       <End Role="Department" EntitySet="Department" />
       <End Role="Personnel" EntitySet="Personnel" />
     </AssociationSet>
+    <EntitySet Name="User" EntityType="DbPersonnelModel.User" />
   </EntityContainer>
   <EntityType Name="Personnel">
     <Key>
@@ -42,4 +43,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

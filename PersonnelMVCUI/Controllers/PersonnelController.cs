@@ -13,13 +13,15 @@ namespace PersonnelMVCUI.Controllers
     {
         DbPersonnelEntities db = new DbPersonnelEntities();
         // GET: Personnel
+
+        
         public ActionResult Index()
         {
             var model = db.Personnel.Include(m => m.Department).ToList();
             return View(model);
         }
 
-
+        [Authorize(Roles = "A,IT")]
         public ActionResult Add()
         {
             var model = new PersonnelFormViewModel()

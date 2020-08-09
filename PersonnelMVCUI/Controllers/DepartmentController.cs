@@ -8,10 +8,11 @@ using PersonnelMVCUI.Models.EntityFramework;
 
 namespace PersonnelMVCUI.Controllers
 {
+    [Authorize(Roles = "A,IT")]
     public class DepartmentController : Controller
     {
         DbPersonnelEntities db = new DbPersonnelEntities();  
-        // GET: Department
+
         public ActionResult Index()
         {
             var model = db.Department.ToList();

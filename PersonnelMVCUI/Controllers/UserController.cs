@@ -10,6 +10,7 @@ using PersonnelMVCUI.Models.EntityFramework;
 
 namespace PersonnelMVCUI.Controllers
 {
+    [Authorize(Roles = "A")]
     public class UserController : Controller
     {
         private DbPersonnelEntities db = new DbPersonnelEntities();

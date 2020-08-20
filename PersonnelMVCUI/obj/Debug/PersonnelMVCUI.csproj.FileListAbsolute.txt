@@ -145,8 +145,15 @@ C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\bin\System.Web.Webpag
 C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\bin\System.Web.Helpers.xml
 C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\bin\System.Web.Mvc.xml
 C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\obj\Debug\PersonnelMVCUI.csprojAssemblyReference.cache
 C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\obj\Debug\PersonnelMVCUI.csproj.CoreCompileInputs.cache
 C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\obj\Debug\PersonnelMVCUI.csproj.CopyComplete
 C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\obj\Debug\PersonnelMVCUI.dll
 C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\obj\Debug\PersonnelMVCUI.pdb
+C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\obj\Debug\PersonnelMVCUI.csprojAssemblyReference.cache
+C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\bin\Antlr3.Runtime.dll
+C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\bin\Newtonsoft.Json.dll
+C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\bin\System.Web.Optimization.dll
+C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\bin\WebGrease.dll
+C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\bin\Antlr3.Runtime.pdb
+C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\bin\Newtonsoft.Json.xml
+C:\Users\Ahmet C\Desktop\git\PersonnelMVCUI\PersonnelMVCUI\bin\System.Web.Optimization.xml

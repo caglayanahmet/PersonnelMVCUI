@@ -15,6 +15,7 @@
             <th>Name</th>
             <th>Update</th>
             <th>Delete</th>
+            <th>Personnels</th>
         </tr>
     </thead>
     <tbody>
@@ -25,7 +26,11 @@
                 <td>@department.Name</td>
                 <td><a class="btn btn-primary"  href="/Department/Update/@department.Id">Update</a></td>
                 <td><a class="btn btn-warning btnDeleteDepartment" data-id="@department.Id"  >Delete</a></td>
+               @* <td>@Html.ActionLink("Display Personnels","DisplayPersonnels","Personnel",new {id=department.Id },new {@class="btn btn-primary" })</td>*@
+                <td>@Ajax.ActionLink("Display Personnels","DisplayPersonnels","Personnel",new {id=department.Id },new AjaxOptions { HttpMethod="GET",UpdateTargetId= "PersonnelList" },new {@class="btn btn-primary" })</td>
             </tr>
         }
     </tbody>
 </table>
+
+<div id="PersonnelList"></div>

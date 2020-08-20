@@ -33,7 +33,7 @@ namespace PersonnelMVCUI.Controllers
                 ViewBag.Message = "Invalid user name or password";
                 return View();
             }
-            return View();
+            
         }
 
         public ActionResult LogOut()

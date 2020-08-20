@@ -1,5 +1,6 @@
 ﻿$(function () {
     $("#tblDepartments").DataTable();
+    
     $("#tblDepartments").on("click", ".btnDeleteDepartment", function () {
         var btn = $(this);
         bootbox.confirm("This department will be deleted permanently. Are you sure?", function (result) {
@@ -17,4 +18,8 @@
 
         })
     });
+});
+
+$(function () {
+    $("#tblPersonnels").DataTable();
 });

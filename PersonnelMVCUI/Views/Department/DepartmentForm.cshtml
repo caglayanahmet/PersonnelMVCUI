@@ -3,8 +3,8 @@
     ViewBag.Title = "Add";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@using (Html.BeginForm("Save", "Department", FormMethod.Post))
+<div id="Message"></div>
+@using (Ajax.BeginForm("Save", "Department", new AjaxOptions { HttpMethod="POST", UpdateTargetId="Message"}))
 {
     @Html.AntiForgeryToken()
     <div class="form-group" style="margin-top:15px">

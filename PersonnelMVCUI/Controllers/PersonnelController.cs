@@ -14,7 +14,7 @@ namespace PersonnelMVCUI.Controllers
         DbPersonnelEntities db = new DbPersonnelEntities();
         // GET: Personnel
 
-        
+        [OutputCache(Duration =30)]
         public ActionResult Index()
         {
             var model = db.Personnel.Include(m => m.Department).ToList();
@@ -89,6 +89,18 @@ namespace PersonnelMVCUI.Controllers
             db.Personnel.Remove(personnel);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult DisplayPersonnels(int id)
+        {
+            var model = db.Personnel.Where(m => m.DepartmentId == id).ToList();
+            return PartialView(model);
+        }
+
+        public ActionResult TotalSalary()
+        {
+            ViewBag.Salary = db.Personnel.Sum(x => x.Salary);
+            return PartialView();
         }
     }
 }
